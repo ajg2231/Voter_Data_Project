@@ -7,14 +7,14 @@ Team members: Alex Goldstein, Jeff Johnson, Melvin Byrd, Katie Carns
 ### Summary:
  Interested in following the migration of Bachelor's Degree Educated voters in North Carolina over the last two election cycles either towards or away from the GOP. In addition we’re also looking for the movement of polling locations in North Carolina over the same time period tracking ease of voting.
 
-*Changes in voter registration by county (Democrat vs Republican)
-*Concentration of college educated adults vs. adults with no degree in each respective county.
-*Investigate any change in polling locations (number or physical location) to determine North Carolinians ability to vote.
+* Changes in voter registration by county (Democrat vs Republican)
+* Concentration of college educated adults vs. adults with no degree in each respective county.
+* Investigate any change in polling locations (number or physical location) to determine North Carolinians ability to vote.
 
 ### Visuals:
-*Hosting on GitHub-io
-*Map overlay of polling locations using leaflet markers
-*Plotly.js graphs
+* Hosting on GitHub-io
+* Map overlay of polling locations using leaflet markers
+* Plotly.js graphs
 
 ### Resources:
 #### Pew Research
@@ -23,3 +23,6 @@ Team members: Alex Goldstein, Jeff Johnson, Melvin Byrd, Katie Carns
 *https://www.ncsbe.gov/results-data/polling-place-data
 #### US Census
 *https://www.census.gov/topics/public-sector/voting/data/tables.html
+
+### Inspiration Clips
+<iframe src="//knoema.com/resource/embed/hntnscc/first" scrolling="no" frameborder="0" style="height:458px; width:905px;"></iframe>
