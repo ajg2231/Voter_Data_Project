@@ -25,5 +25,4 @@ Team members: Alex Goldstein, Jeff Johnson, Melvin Byrd, Katie Carns
 *https://www.census.gov/topics/public-sector/voting/data/tables.html
 
 ### Inspiration Clips
-![Image of Graph}]
-("http://www.w3.org/2000/svg")
+
