@@ -25,4 +25,5 @@ Team members: Alex Goldstein, Jeff Johnson, Melvin Byrd, Katie Carns
 *https://www.census.gov/topics/public-sector/voting/data/tables.html
 
 ### Inspiration
-images/college_degree_example.PNG
+![Image of education tracker](https://ajg2231.github.com/images/education_tracker.PNG)
+![Image of degree increase](https://ajg2231.github.com/images/college_degree_example.PNG)
