@@ -3639,6 +3639,6 @@ for (var i = 0; i<r1.length; i++) {
   r3.push(((r2[i]/r1[i])-1)*100);
 }
 
-document.getElementById("test1").innerHTML = console.log("The covariance of change in Democratic voter registration and educational attainment is: " + stats.sampleCovariance(d3, ed));
+(document.getElementById("test1").innerHTML = console.log("The covariance of change in Democratic voter registration and educational attainment is: " + stats.sampleCovariance(d3, ed)));
 
-document.getElementById("test2").innerHTML = console.log("The covariance of change in Republican voter registration and educational attainment is: " + stats.sampleCovariance(r3, ed));
+(document.getElementById("test2").innerHTML = console.log("The covariance of change in Republican voter registration and educational attainment is: " + stats.sampleCovariance(r3, ed)));
