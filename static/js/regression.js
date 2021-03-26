@@ -3642,6 +3642,6 @@ for (var i = 0; i<r1.length; i++) {
 var demo = stats.sampleCovariance(d3, ed);
 var repo = stats.sampleCovariance(r3, ed);
 
-document.getElementById("test1").write("The covariance of change in Democratic voter registration and educational attainment is: " + demo);
+d3.select("test1").text("The covariance of change in Democratic voter registration and educational attainment is: " + demo);
 
-document.getElementById("test2").write("The covariance of change in Republican voter registration and educational attainment is: " + repo);
+d3.select("test2").text("The covariance of change in Republican voter registration and educational attainment is: " + repo);
