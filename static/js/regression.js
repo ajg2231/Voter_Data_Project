@@ -3628,18 +3628,18 @@ data.forEach((dat) => {
   });
 });
 
-var d3 = [];
+var d4 = [];
 var r3 = [];
 
 for (var i = 0; i<d1.length; i++) {
-  d3.push(((d2[i]/d1[i])-1)*100);
+  d4.push(((d2[i]/d1[i])-1)*100);
 }
 
 for (var i = 0; i<r1.length; i++) {
   r3.push(((r2[i]/r1[i])-1)*100);
 }
 
-var demo = stats.sampleCovariance(d3, ed);
+var demo = stats.sampleCovariance(d4, ed);
 var repo = stats.sampleCovariance(r3, ed);
 
 d3.select("test1").text("The covariance of change in Democratic voter registration and educational attainment is: " + demo);
