@@ -3645,7 +3645,7 @@ var repo = sampleCovariance(r3, ed);
 var push1 = ("The covariance of change in Democratic voter registration and educational attainment is: " + demo);
 var push2 = ("The covariance of change in Republican voter registration and educational attainment is: " + repo);
 
-d3.select("ul")
+d3.select("li")
   .data(push1)
   .enter()
   .append("li")
@@ -3653,7 +3653,7 @@ d3.select("ul")
     return(d)
 });
 
-d3.select("ul")
+d3.select("li")
   .data(push2)
   .enter()
   .append("li")
