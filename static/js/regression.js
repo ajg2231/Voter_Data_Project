@@ -3639,8 +3639,8 @@ for (var i = 0; i<r1.length; i++) {
   r3.push(((r2[i]/r1[i])-1)*100);
 }
 
-var demo = simple-statistics.sampleCovariance(d4, ed);
-var repo = simple-statistics.sampleCovariance(r3, ed);
+var demo = sampleCovariance(d4, ed);
+var repo = sampleCovariance(r3, ed);
 
 var push1 = ("The covariance of change in Democratic voter registration and educational attainment is: " + demo);
 var push2 = ("The covariance of change in Republican voter registration and educational attainment is: " + repo);
