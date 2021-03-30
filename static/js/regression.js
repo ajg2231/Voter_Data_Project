@@ -3648,6 +3648,7 @@ var push2 = ("The covariance of change in Republican voter registration and educ
 var push3 = [push1, push2];
 
 d3.select("#statement")
+  .append("p")
   .data(push3)
   .enter()
   .text(function(d) {
