@@ -3672,7 +3672,7 @@ d3.select("ul")
 });
 
 d3.select("ul")
-  .data(push3)
+  .data(push1)
   .enter()
   .append("li")
   .text(function(d) {
@@ -3680,7 +3680,7 @@ d3.select("ul")
 });
 
 d3.select("ul")
-  .data(push3)
+  .data(push2)
   .enter()
   .append("li")
   .text(function(d) {
