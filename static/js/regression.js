@@ -3647,10 +3647,10 @@ var push2 = ("The covariance of change in Republican voter registration and educ
 
 var push3 = [push1, push2];
 
-d3.select("li")
+d3.select("ul")
+  .append("li")
   .data(push3)
   .enter()
-  .append("li")
   .text(function(d) {
     return(d)
 });
