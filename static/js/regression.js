@@ -3654,3 +3654,35 @@ d3.select("ul")
   .text(function(d) {
     return(d)
 });
+
+d3.select("ul")
+  .data(push3)
+  .enter()
+  .append("li")
+  .text(function(d) {
+    return(d)
+});
+
+d3.select("ul")
+  .data(push3)
+  .enter()
+  .append("li")
+  .text(function(d) {
+    return(d)
+});
+
+d3.select("ul")
+  .data(push3)
+  .enter()
+  .append("li")
+  .text(function(d) {
+    return(d)
+});
+
+d3.select("ul")
+  .data(push3)
+  .enter()
+  .append("li")
+  .text(function(d) {
+    return(d)
+});
