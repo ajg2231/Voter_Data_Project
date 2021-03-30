@@ -3649,7 +3649,7 @@ var push3 = [push1, push2];
 var push4 = [push2, push1];
 
 d3.select("ul")
-  .data(push1)
+  .data(push4)
   .enter()
   .append("li")
   .text(function(d) {
@@ -3657,7 +3657,7 @@ d3.select("ul")
 });
 
 d3.select("ul")
-  .data(push2)
+  .data(push3)
   .enter()
   .append("li")
   .text(function(d) {
@@ -3665,7 +3665,7 @@ d3.select("ul")
 });
 
 d3.select("ul")
-  .data(push1)
+  .data(push3)
   .enter()
   .append("li")
   .text(function(d) {
