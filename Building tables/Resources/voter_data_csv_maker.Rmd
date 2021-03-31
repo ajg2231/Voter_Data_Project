@@ -1,0 +1,361 @@
+---
+title: "voter-data-csv-maker"
+type: R_code
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#> a <- file.choose()
+> a
+[1] "/Users/alexandergoldstein/Library/Mobile Documents/com~apple~Numbers/Documents/Adults with bachelors degrees by county North Carolina.csv"
+> a <- file.choose()
+Error in file.choose() : file choice cancelled
+> b <- read.csv(a)
+> c <- file.choose()
+> d <- file.choose()
+> install.packages('tidyverse')
+also installing the dependencies ‘colorspace’, ‘sys’, ‘ps’, ‘farver’, ‘labeling’, ‘munsell’, ‘RColorBrewer’, ‘viridisLite’, ‘askpass’, ‘processx’, ‘backports’, ‘generics’, ‘blob’, ‘DBI’, ‘tidyselect’, ‘withr’, ‘gtable’, ‘isoband’, ‘scales’, ‘curl’, ‘openssl’, ‘clipr’, ‘BH’, ‘cpp11’, ‘callr’, ‘fs’, ‘selectr’, ‘broom’, ‘dbplyr’, ‘dplyr’, ‘forcats’, ‘ggplot2’, ‘haven’, ‘httr’, ‘lubridate’, ‘modelr’, ‘purrr’, ‘readr’, ‘reprex’, ‘rstudioapi’, ‘rvest’, ‘tidyr’, ‘xml2’
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/colorspace_2.0-0.tgz'
+Content type 'application/x-gzip' length 2616761 bytes (2.5 MB)
+==================================================
+downloaded 2.5 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/sys_3.4.tgz'
+Content type 'application/x-gzip' length 47291 bytes (46 KB)
+==================================================
+downloaded 46 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/ps_1.6.0.tgz'
+Content type 'application/x-gzip' length 285360 bytes (278 KB)
+==================================================
+downloaded 278 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/farver_2.1.0.tgz'
+Content type 'application/x-gzip' length 1950011 bytes (1.9 MB)
+==================================================
+downloaded 1.9 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/labeling_0.4.2.tgz'
+Content type 'application/x-gzip' length 60296 bytes (58 KB)
+==================================================
+downloaded 58 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/munsell_0.5.0.tgz'
+Content type 'application/x-gzip' length 241504 bytes (235 KB)
+==================================================
+downloaded 235 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/RColorBrewer_1.1-2.tgz'
+Content type 'application/x-gzip' length 52944 bytes (51 KB)
+==================================================
+downloaded 51 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/viridisLite_0.3.0.tgz'
+Content type 'application/x-gzip' length 57005 bytes (55 KB)
+==================================================
+downloaded 55 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/askpass_1.1.tgz'
+Content type 'application/x-gzip' length 21511 bytes (21 KB)
+==================================================
+downloaded 21 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/processx_3.4.5.tgz'
+Content type 'application/x-gzip' length 279427 bytes (272 KB)
+==================================================
+downloaded 272 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/backports_1.2.1.tgz'
+Content type 'application/x-gzip' length 86201 bytes (84 KB)
+==================================================
+downloaded 84 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/generics_0.1.0.tgz'
+Content type 'application/x-gzip' length 69334 bytes (67 KB)
+==================================================
+downloaded 67 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/blob_1.2.1.tgz'
+Content type 'application/x-gzip' length 45899 bytes (44 KB)
+==================================================
+downloaded 44 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/DBI_1.1.1.tgz'
+Content type 'application/x-gzip' length 670916 bytes (655 KB)
+==================================================
+downloaded 655 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/tidyselect_1.1.0.tgz'
+Content type 'application/x-gzip' length 197492 bytes (192 KB)
+==================================================
+downloaded 192 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/withr_2.4.1.tgz'
+Content type 'application/x-gzip' length 205896 bytes (201 KB)
+==================================================
+downloaded 201 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/gtable_0.3.0.tgz'
+Content type 'application/x-gzip' length 431500 bytes (421 KB)
+==================================================
+downloaded 421 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/isoband_0.2.4.tgz'
+Content type 'application/x-gzip' length 3710533 bytes (3.5 MB)
+==================================================
+downloaded 3.5 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/scales_1.1.1.tgz'
+Content type 'application/x-gzip' length 552885 bytes (539 KB)
+==================================================
+downloaded 539 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/curl_4.3.tgz'
+Content type 'application/x-gzip' length 741519 bytes (724 KB)
+==================================================
+downloaded 724 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/openssl_1.4.3.tgz'
+Content type 'application/x-gzip' length 2863764 bytes (2.7 MB)
+==================================================
+downloaded 2.7 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/clipr_0.7.1.tgz'
+Content type 'application/x-gzip' length 48725 bytes (47 KB)
+==================================================
+downloaded 47 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/BH_1.75.0-0.tgz'
+Content type 'application/x-gzip' length 12149712 bytes (11.6 MB)
+==================================================
+downloaded 11.6 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/cpp11_0.2.6.tgz'
+Content type 'application/x-gzip' length 199157 bytes (194 KB)
+==================================================
+downloaded 194 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/callr_3.5.1.tgz'
+Content type 'application/x-gzip' length 385435 bytes (376 KB)
+==================================================
+downloaded 376 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/fs_1.5.0.tgz'
+Content type 'application/x-gzip' length 545211 bytes (532 KB)
+==================================================
+downloaded 532 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/selectr_0.4-2.tgz'
+Content type 'application/x-gzip' length 485312 bytes (473 KB)
+==================================================
+downloaded 473 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/broom_0.7.5.tgz'
+Content type 'application/x-gzip' length 1778611 bytes (1.7 MB)
+==================================================
+downloaded 1.7 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/dbplyr_2.1.0.tgz'
+Content type 'application/x-gzip' length 790791 bytes (772 KB)
+==================================================
+downloaded 772 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/dplyr_1.0.5.tgz'
+Content type 'application/x-gzip' length 1251016 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/forcats_0.5.1.tgz'
+Content type 'application/x-gzip' length 354051 bytes (345 KB)
+==================================================
+downloaded 345 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/ggplot2_3.3.3.tgz'
+Content type 'application/x-gzip' length 4068756 bytes (3.9 MB)
+==================================================
+downloaded 3.9 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/haven_2.3.1.tgz'
+Content type 'application/x-gzip' length 1131774 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/httr_1.4.2.tgz'
+Content type 'application/x-gzip' length 498155 bytes (486 KB)
+==================================================
+downloaded 486 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/lubridate_1.7.10.tgz'
+Content type 'application/x-gzip' length 1608605 bytes (1.5 MB)
+==================================================
+downloaded 1.5 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/modelr_0.1.8.tgz'
+Content type 'application/x-gzip' length 200721 bytes (196 KB)
+==================================================
+downloaded 196 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/purrr_0.3.4.tgz'
+Content type 'application/x-gzip' length 417900 bytes (408 KB)
+==================================================
+downloaded 408 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/readr_1.4.0.tgz'
+Content type 'application/x-gzip' length 2450519 bytes (2.3 MB)
+==================================================
+downloaded 2.3 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/reprex_1.0.0.tgz'
+Content type 'application/x-gzip' length 478248 bytes (467 KB)
+==================================================
+downloaded 467 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/rstudioapi_0.13.tgz'
+Content type 'application/x-gzip' length 271959 bytes (265 KB)
+==================================================
+downloaded 265 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/rvest_1.0.0.tgz'
+Content type 'application/x-gzip' length 196848 bytes (192 KB)
+==================================================
+downloaded 192 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/tidyr_1.1.3.tgz'
+Content type 'application/x-gzip' length 959468 bytes (936 KB)
+==================================================
+downloaded 936 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/xml2_1.3.2.tgz'
+Content type 'application/x-gzip' length 2335007 bytes (2.2 MB)
+==================================================
+downloaded 2.2 MB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/tidyverse_1.3.0.tgz'
+Content type 'application/x-gzip' length 433049 bytes (422 KB)
+==================================================
+downloaded 422 KB
+
+
+The downloaded binary packages are in
+	/var/folders/4b/20_g0jhd415d97259zxn9jww0000gn/T//RtmpFdCm0y/downloaded_packages
+> install.packages('readxl')
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.0/readxl_1.3.1.tgz'
+Content type 'application/x-gzip' length 1676952 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+
+The downloaded binary packages are in
+	/var/folders/4b/20_g0jhd415d97259zxn9jww0000gn/T//RtmpFdCm0y/downloaded_packages
+> library(tidyverse)
+── Attaching packages ───────────────────────────────────────── tidyverse 1.3.0 ──
+✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+✓ tibble  3.0.6     ✓ dplyr   1.0.5
+✓ tidyr   1.1.3     ✓ stringr 1.4.0
+✓ readr   1.4.0     ✓ forcats 0.5.1
+── Conflicts ──────────────────────────────────────────── tidyverse_conflicts() ──
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+> library(readxl)
+> e <- readxl_example(c)
+Error in system.file("extdata", path, package = "readxl", mustWork = TRUE) : 
+  no file found
+> c
+[1] "/Users/alexandergoldstein/Documents/E-Day 2020 Voter Registration stats.xlsx"
+> readxl_example("/Users/alexandergoldstein/Documents/E-Day 2020 Voter Registration stats.xlsx")
+Error in system.file("extdata", path, package = "readxl", mustWork = TRUE) : 
+  no file found
+> read_excel(c)
+# A tibble: 101 x 16                                                            
+   County Democratic Republican Green Constitution Libertarian Unaffiliated White
+   <chr>       <dbl>      <dbl> <dbl>        <dbl>       <dbl>        <dbl> <dbl>
+ 1 NA             NA         NA    NA           NA          NA           NA    NA
+ 2 ALAMA…      39209      36271    31           66         654        34695 71870
+ 3 ALEXA…       5105      11775     3           22         108         7940 21634
+ 4 ALLEG…       2156       2984     4            2          34         2429  6739
+ 5 ANSON       10125       2867     8           24          35         3673  6709
+ 6 ASHE         4502       8875     5           16          92         6055 17822
+ 7 AVERY        1428       7161     6            9          61         3690 11096
+ 8 BEAUF…      11952      12094    16           18         109         9901 23194
+ 9 BERTIE       8767       1631     3            3          38         2893  4624
+10 BLADEN      10752       4956     5            7          63         7072 12731
+# … with 91 more rows, and 8 more variables: Black <dbl>, American <chr>, `Native
+#   Hawaiian` <dbl>, Other <dbl>, Hispanic <dbl>, Male <dbl>, Female <dbl>,
+#   Total <dbl>
+> read_excel(c)
+# A tibble: 101 x 16                                                            
+   County Democrat Republican Green Constitution Libertarian Independent White
+   <chr>     <dbl>      <dbl> <dbl>        <dbl>       <dbl>       <dbl> <dbl>
+ 1 NA           NA         NA    NA           NA          NA          NA    NA
+ 2 ALAMA…    39209      36271    31           66         654       34695 71870
+ 3 ALEXA…     5105      11775     3           22         108        7940 21634
+ 4 ALLEG…     2156       2984     4            2          34        2429  6739
+ 5 ANSON     10125       2867     8           24          35        3673  6709
+ 6 ASHE       4502       8875     5           16          92        6055 17822
+ 7 AVERY      1428       7161     6            9          61        3690 11096
+ 8 BEAUF…    11952      12094    16           18         109        9901 23194
+ 9 BERTIE     8767       1631     3            3          38        2893  4624
+10 BLADEN    10752       4956     5            7          63        7072 12731
+# … with 91 more rows, and 8 more variables: Black <dbl>, Native <chr>,
+#   Hawaiian <dbl>, Other <dbl>, Hispanic <dbl>, Male <dbl>, Female <dbl>,
+#   Total <dbl>
+> c <- file.choose()
+> d <- file.choose()
+> read_excel(c)
+# A tibble: 101 x 16                                                            
+   County Democrat Republican Green Constitution Libertarian Independent White
+   <chr>     <dbl>      <dbl> <dbl>        <dbl>       <dbl>       <dbl> <dbl>
+ 1 NA           NA         NA    NA           NA          NA          NA    NA
+ 2 ALAMA…    39529      33130     0            0         440       28037 72449
+ 3 ALEXA…     6553      10749     0            0          71        7056 22683
+ 4 ALLEG…     2813       2557     0            0          36        2064  7132
+ 5 ANSON     11939       2456     0            0          19        3002  7514
+ 6 ASHE       5668       8060     0            0          65        5251 18479
+ 7 AVERY      1493       7029     0            0          49        3388 11546
+ 8 BEAUF…    13896      10743     0            0          98        8585 23509
+ 9 BERTIE    10309       1541     0            0          19        2379  5059
+10 BLADEN    13713       3462     0            0          33        5878 13404
+# … with 91 more rows, and 8 more variables: Black <dbl>, Native <chr>,
+#   Hawaiian <dbl>, Other <dbl>, Hispanic <dbl>, Male <dbl>, Female <dbl>,
+#   Total <dbl>
+> excel_sheets(c)
+[1] "Sheet1"
+> file.choose()
+[1] "/Users/alexandergoldstein/Documents/E-Day 2020 Voter Registration stats.xlsx"
+> d <- file.choose()
+> e <- read_excel(c)
+                                                                                
+> f <- fread_excel(d)
+Error in fread_excel(d) : could not find function "fread_excel"
+> f <- read_excel(d)
+                                                                                
+> names(e)
+ [1] "County"       "Democrat"     "Republican"   "Green"        "Constitution"
+ [6] "Libertarian"  "Independent"  "White"        "Black"        "Native"      
+[11] "Hawaiian"     "Other"        "Hispanic"     "Male"         "Female"      
+[16] "Total"       
+> names(f)
+ [1] "County2"       "Democrat2"     "Republican2"   "Green2"       
+ [5] "Constitution2" "Libertarian2"  "Independent2"  "White2"       
+ [9] "Black2"        "Native2"       "Hawaiian2"     "Other2"       
+[13] "Hispanic2"     "Male2"         "Female2"       "Total2"       
+> g <- merge(e, f)
+> g <- rbind(e, f)
+Error in match.names(clabs, names(xi)) : 
+  names do not match previous names
+> g <- cbind(e, f)
+> a <- file.choose()
+Error in file.choose() : file choice cancelled
+> h <- cbind(g, b$Bachelors_Degree)
+Error in data.frame(..., check.names = FALSE) : 
+  arguments imply differing number of rows: 101, 100
+> a <- file.choose()
+> b <- read.csv(a)
+> h <- cbind(g, b$Bachelors_Degree)
+> write.csv(h, NC.csv)
+Error in write.table(h, NC.csv, col.names = NA, sep = ",", dec = ".",  : 
+  object 'NC.csv' not found
+> write.csv(h, "NC.csv")
